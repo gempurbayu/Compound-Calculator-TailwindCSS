@@ -5,11 +5,111 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
 </head>
-<body>
-    <a href="#">Hello</a>
+<body class="text-gray-600 body-font font-montserrat">
+    <div class="flex flex-col items-start w-full px-10 pt-5 pb-20 lg:pt-20 lg:flex-row">
+        <div class="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-5/12">
+           <div class="relative z-10 flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-xl">
+              <h4 class="w-full text-4xl font-medium leading-snug">Example contact form</h4>
+              <form class="relative w-full mt-6 space-y-8">
+                 <div class="relative">
+                    <label class="absolute px-2 ml-2 -mt-3 font-light text-gray-600 bg-white">Dana Saat Ini</label>
+                    <input type="text" class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black" placeholder="Rp 1.000.000">
+                 </div>
+                 <div class="relative">
+                    <label class="absolute px-2 ml-2 -mt-3 font-light text-gray-600 bg-white">Jangka Waktu (Tahun)</label>
+                    <input type="text" class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black" placeholder="10">
+                 </div>
+                 <div class="relative">
+                    <select id="large" class="block py-3 px-4 w-full font-light text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>Pilih Profil Resiko</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="FR">France</option>
+                      <option value="DE">Germany</option>
+                    </select>
+                 </div>
+                 <div class="relative">
+                    <button class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-[#C72122] rounded-lg hover:bg-blue-500 ease">Submit</button>
+                 </div>
+              </form>
+           </div>
+        </div>
+        <div class="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-7/12">
+            <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700">
+              <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
+                <div class="flex flex-wrap items-center">
+                  <div class="relative w-full max-w-full flex-grow flex-1">
+                    <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
+                      Overview
+                    </h6>
+                    <h2 class="text-blueGray-100 text-xs font-semibold">
+                      Sales value
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <canvas id="chart" style="width:100%;max-width:850px"></canvas>
+            </div>
+         </div>
+     </div>
 </body>
+
+<script>
+    var xValues = [100,200,300,400,500,600,700];
+    var ctx = document.getElementById('chart').getContext('2d');
+
+    var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+    gradient.addColorStop(0, 'rgba(224, 195, 155, 1)');
+    gradient.addColorStop(1, 'rgba(100, 100, 0,0)');
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+    data: {
+        labels: xValues,
+        datasets: [{
+        data: [1000,1140,1460,1660,1870,2010,3330],
+        borderColor: "red",
+        fill: false,
+        backgroundColor: gradient,
+        },{
+        data: [1600,1700,1700,1900,2000,2700,4000],
+        borderColor: "green",
+        fill: false
+        }]
+    },
+    options: {
+        legend: {display: false},
+        scales: {
+            xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+            yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+        },
+        elements:{
+                point:{
+                    backgroundColor: 'transparent',
+                    borderColor: 'transparent',
+                    radius:'0'
+                }
+            }
+    }
+    });
+</script>
 </html>
