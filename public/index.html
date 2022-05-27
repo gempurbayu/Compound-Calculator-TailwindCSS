@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:ital@0;1&display=swap"
       rel="stylesheet"
@@ -17,99 +23,164 @@
     </script>
 </head>
 <body class="text-gray-600 body-font font-montserrat">
-    <div class="flex flex-col items-start w-full px-10 pt-5 pb-20 lg:pt-20 lg:flex-row">
-        <div class="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-5/12">
-           <div class="relative z-10 flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-xl">
-              <h4 class="w-full text-4xl font-medium leading-snug">Example contact form</h4>
-              <form class="relative w-full mt-6 space-y-8">
-                 <div class="relative">
-                    <label class="absolute px-2 ml-2 -mt-3 font-light text-gray-600 bg-white">Dana Saat Ini</label>
-                    <input type="text" class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black" placeholder="Rp 1.000.000">
-                 </div>
-                 <div class="relative">
-                    <label class="absolute px-2 ml-2 -mt-3 font-light text-gray-600 bg-white">Jangka Waktu (Tahun)</label>
-                    <input type="text" class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black" placeholder="10">
-                 </div>
-                 <div class="relative">
-                    <select id="large" class="block py-3 px-4 w-full font-light text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                      <option selected>Pilih Profil Resiko</option>
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="FR">France</option>
-                      <option value="DE">Germany</option>
-                    </select>
-                 </div>
-                 <div class="relative">
-                    <button class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-[#C72122] rounded-lg hover:bg-blue-500 ease">Submit</button>
-                 </div>
-              </form>
-           </div>
-        </div>
-        <div class="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-7/12">
-            <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700">
-              <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
-                <div class="flex flex-wrap items-center">
-                  <div class="relative w-full max-w-full flex-grow flex-1">
-                    <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
-                      Overview
-                    </h6>
-                    <h2 class="text-blueGray-100 text-xs font-semibold">
-                      Sales value
-                    </h2>
-                  </div>
+   <section id="calculator" class="pt-12">
+        <div class="container items-center m-9 mx-auto">
+            <div class="flex flex-col px-4 lg:flex-row lg:space-x-7">
+                <div class="h-full p-9 bg-white drop-shadow-2xl rounded-2xl w-full lg:w-1/3">
+                    <form>
+                        <div class="mb-6">
+                            <label for="floating_dana" class="peer-focus:font-medium text-sm text-gray-500 dark:text-gray-400 duration-300 peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dana Saat Ini</label>
+                            <input type="number" name="floating_dana" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-700 focus:outline-none focus:ring-0 focus:border-amber-700 peer" placeholder="awdawd " required />
+                        </div>
+                        <div class="mb-6">
+                          <label for="floating_dana" class="peer-focus:font-medium text-sm text-gray-500 dark:text-gray-400 duration-300 peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dana Saat Ini</label>
+                          <input type="number" name="floating_dana" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-700 focus:outline-none focus:ring-0 focus:border-amber-700 peer" placeholder="awdawd " required />
+                        </div>
+                        <div class="mb-6">
+                          <label for="floating_dana" class="peer-focus:font-medium text-sm text-gray-500 dark:text-gray-400 duration-300 peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dana Saat Ini</label>
+                          <input type="number" name="floating_dana" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-700 focus:outline-none focus:ring-0 focus:border-amber-700 peer" placeholder="awdawd " required />
+                        </div>
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                      </form>
                 </div>
-              </div>
-              <canvas id="chart" style="width:100%;max-width:850px"></canvas>
+                <div class="h-full bg-amber-400 lg:my-0 sm:my-4 w-full lg:w-2/3">
+                  <figure class="highcharts-figure">
+                    <div id="container"></div>
+                </figure>
+                </div>
             </div>
-         </div>
-     </div>
+        </div>
+   </section>
 </body>
 
 <script>
-    var xValues = [100,200,300,400,500,600,700];
-    var ctx = document.getElementById('chart').getContext('2d');
+    // A point click event that uses the Renderer to draw a label next to the point
+// On subsequent clicks, move the existing label instead of creating a new one.
+Highcharts.addEvent(Highcharts.Point, 'click', function () {
+    if (this.series.options.className.indexOf('popup-on-click') !== -1) {
+        const chart = this.series.chart;
+        const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
+        const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
 
-    var gradient = ctx.createLinearGradient(0, 0, 0, 300);
-    gradient.addColorStop(0, 'rgba(224, 195, 155, 1)');
-    gradient.addColorStop(1, 'rgba(100, 100, 0,0)');
-
-    var myChart = new Chart(ctx, {
-      type: 'line',
-    data: {
-        labels: xValues,
-        datasets: [{
-        data: [1000,1140,1460,1660,1870,2010,3330],
-        borderColor: "red",
-        fill: false,
-        backgroundColor: gradient,
-        },{
-        data: [1600,1700,1700,1900,2000,2700,4000],
-        borderColor: "green",
-        fill: false
-        }]
-    },
-    options: {
-        legend: {display: false},
-        scales: {
-            xAxes: [{
-                gridLines: {
-                    color: "rgba(0, 0, 0, 0)",
-                }
-            }],
-            yAxes: [{
-                gridLines: {
-                    color: "rgba(0, 0, 0, 0)",
-                }   
-            }]
-        },
-        elements:{
-                point:{
-                    backgroundColor: 'transparent',
-                    borderColor: 'transparent',
-                    radius:'0'
-                }
-            }
+        const anchorX = this.plotX + this.series.xAxis.pos;
+        const anchorY = this.plotY + this.series.yAxis.pos;
+        const align = anchorX < chart.chartWidth - 200 ? 'left' : 'right';
+        const x = align === 'left' ? anchorX + 10 : anchorX - 10;
+        const y = anchorY - 30;
+        if (!chart.sticky) {
+            chart.sticky = chart.renderer
+                .label(text, x, y, 'callout',  anchorX, anchorY)
+                .attr({
+                    align,
+                    fill: 'rgba(0, 0, 0, 0.75)',
+                    padding: 10,
+                    zIndex: 7 // Above series, below tooltip
+                })
+                .css({
+                    color: 'white'
+                })
+                .on('click', function () {
+                    chart.sticky = chart.sticky.destroy();
+                })
+                .add();
+        } else {
+            chart.sticky
+                .attr({ align, text })
+                .animate({ anchorX, anchorY, x, y }, { duration: 250 });
+        }
     }
-    });
+});
+
+
+Highcharts.chart('container', {
+
+    chart: {
+        scrollablePlotArea: {
+            minWidth: 700
+        }
+    },
+
+    data: {
+        csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
+        beforeParse: function (csv) {
+            return csv.replace(/\n\n/g, '\n');
+        }
+    },
+
+    title: {
+        text: null
+    },
+
+
+    xAxis: {
+        tickInterval: 7 * 24 * 3600 * 1000, // one week
+        tickWidth: 0,
+        gridLineWidth: 0,
+        labels: {
+            align: 'left',
+            x: 3,
+            y: -3
+        }
+    },
+
+    yAxis: [{ // left y axis
+        title: {
+            text: null
+        },
+        labels: {
+            align: 'left',
+            x: 3,
+            y: 16,
+            format: '{value:.,0f}'
+        },
+        showFirstLabel: false
+    }, { // right y axis
+        linkedTo: 0,
+        gridLineWidth: 0,
+        opposite: true,
+        title: {
+            text: null
+        },
+        labels: {
+            align: 'right',
+            x: -3,
+            y: 16,
+            format: '{value:.,0f}'
+        },
+        showFirstLabel: false
+    }],
+
+    legend: {
+        align: 'left',
+        verticalAlign: 'top',
+        borderWidth: 0
+    },
+
+    tooltip: {
+        shared: true,
+        crosshairs: true
+    },
+
+    plotOptions: {
+        series: {
+            cursor: 'pointer',
+            className: 'popup-on-click',
+            marker: {
+                lineWidth: 1
+            }
+        }
+    },
+
+    series: [{
+        name: 'All sessions',
+        lineWidth: 4,
+        marker: {
+            radius: 4
+        }
+    }, {
+        name: 'New users'
+    }]
+});
+
 </script>
 </html>
