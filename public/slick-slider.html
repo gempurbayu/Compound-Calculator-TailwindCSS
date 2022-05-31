@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container w-auto">
+        <div class="px-[85px]">
+            <button class="prev-arrow">
+                <img src="assets/up.svg" alt="down" width="45px" class=""/>
+            </button>
+        </div>
+        <div class="slider">
+            <div class="s_item">
+                <div class="item flex">
+                    <div class="number xl:w-1/5 md:w-1/3">
+                    <span class="text-[200px] text-[#D30000] font-bold leading-none">15</span>
+                    </div>
+                    <div class="cont xl:w-4/5 md:w-2/3 bg-amber-500">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="s_item">
+                <div class="item">
+                    <span class="text-[200px] font-bold leading-none">16</span>
+                </div>
+            </div>
+            <div class="s_item">
+                <div class="item">
+                    <span class="text-[200px] font-bold leading-none">17</span>
+                </div>
+            </div>
+        </div>
+        <div class="px-[85px]">
+            <button class="next-arrow">
+                <img src="assets/down.svg" alt="down" width="45px"/>
+            </button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.slider').slick({
+        slideToShow:1,
+        vertical:true,
+        infinite:true,
+        prevArrow:'.prev-arrow',
+        nextArrow:'.next-arrow',
+    });
+</script>
+</html>
