@@ -1,40 +1,5 @@
    // A point click event that uses the Renderer to draw a label next to the point
 // On subsequent clicks, move the existing label instead of creating a new one.
-Highcharts.addEvent(Highcharts.Point, 'click', function () {
-    if (this.series.options.className.indexOf('popup-on-click') !== -1) {
-        const chart = this.series.chart;
-        const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
-        const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
-
-        const anchorX = this.plotX + this.series.xAxis.pos;
-        const anchorY = this.plotY + this.series.yAxis.pos;
-        const align = anchorX < chart.chartWidth - 200 ? 'left' : 'right';
-        const x = align === 'left' ? anchorX + 10 : anchorX - 10;
-        const y = anchorY - 30;
-        if (!chart.sticky) {
-            chart.sticky = chart.renderer
-                .label(text, x, y, 'callout',  anchorX, anchorY)
-                .attr({
-                    align,
-                    fill: 'rgba(0, 0, 0, 0)',
-                    padding: 10,
-                    zIndex: 7 // Above series, below tooltip
-                })
-                .css({
-                    color: 'white'
-                })
-                .on('click', function () {
-                    chart.sticky = chart.sticky.destroy();
-                })
-                .add();
-        } else {
-            chart.sticky
-                .attr({ align, text })
-                .animate({ anchorX, anchorY, x, y }, { duration: 250 });
-        }
-    }
-});
-
 
 Highcharts.chart('container', {
 
@@ -52,28 +17,18 @@ Highcharts.chart('container', {
         enabled: false
     },
 
-    data: {
-        csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
-        beforeParse: function (csv) {
-            return csv.replace(/\n\n/g, '\n');
-        }
-    },
-
     title: {
         text: null
     },
 
 
     xAxis: {
-        tickInterval: 7 * 24 * 3600 * 1000, // one week
-        tickWidth: 0,
-        gridLineWidth: 0,
-        labels: {
-            align: 'left',
-            x: 3,
-            y: -20,
-        },
-        lineWidth: 0
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        ,
+        crosshair: {
+            width: 1,
+            color: 'gray'
+        }
     },
 
     yAxis: [{ // left y axis
@@ -82,10 +37,9 @@ Highcharts.chart('container', {
         },
         labels: {
             align: 'right',
-            x: -10,
-            y: 16,
+            x: 10,
+            y: 0,
             format: '{value:.,0f}',
-            enabled: false
         },
         gridLineWidth: 0,
         showFirstLabel: false
@@ -98,23 +52,31 @@ Highcharts.chart('container', {
 
     plotOptions: {
         series: {
+            dataLabels: {
+                enabled: false,
+            },
+            labels: {
+                enabled: false
+            },
             cursor: 'pointer',
             className: 'popup-on-click',
             marker: {
                 enabled: false,
                 lineWidth: 1
-            }
+            },
+            poinStart: 4,
+            yAxis: 0
         }
     },
 
-    series: [{
-        name: 'All sessions',
-        lineWidth: 4,
-        marker: {
-            enabled: false,
-            radius: 4
-        }
-    }, {
-        name: 'New users'
+    series: [{name: 'Investasi di Sinarmas',
+    data: [4, 4.4, 4.8, 5, 5.5, 5.9, 8, 10],
+    color: '#D30000',
+    lineWidth: 1
+}, {
+    name: 'Tabungan Biasa',
+    data: [4, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2],
+    color: 'purple',
+    lineWidth: 1
     }]
 });
