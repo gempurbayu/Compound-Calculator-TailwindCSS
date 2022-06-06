@@ -71,8 +71,9 @@ Highcharts.chart('container', {
         labels: {
             align: 'left',
             x: 3,
-            y: 10
-        }
+            y: -20,
+        },
+        lineWidth: 0
     },
 
     yAxis: [{ // left y axis
@@ -83,7 +84,8 @@ Highcharts.chart('container', {
             align: 'right',
             x: -10,
             y: 16,
-            format: '{value:.,0f}'
+            format: '{value:.,0f}',
+            enabled: false
         },
         gridLineWidth: 0,
         showFirstLabel: false
