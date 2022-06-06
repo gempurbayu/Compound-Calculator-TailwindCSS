@@ -40,6 +40,7 @@ Highcharts.chart('container', {
             x: 10,
             y: 0,
             format: '{value:.,0f}',
+            enabled: false
         },
         gridLineWidth: 0,
         showFirstLabel: false
