@@ -7,6 +7,7 @@ Highcharts.chart('container', {
         scrollablePlotArea: {
             minWidth: 500
         },
+        backgroundColor: "rgba(0,0,0,0)"
     
     },
     legend: {
