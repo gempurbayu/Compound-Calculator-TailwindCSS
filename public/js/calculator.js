@@ -1,64 +1,118 @@
-const context = document.getElementById("data-set").getContext("2d");
-let line = new Chart(context, {});
-//Values from the form
-const intialAmount = document.getElementById("initialamount");
-const years = document.getElementById("years");
-const rates = document.getElementById("rates");
-const compound = document.getElementById("compound");
+   // A point click event that uses the Renderer to draw a label next to the point
+// On subsequent clicks, move the existing label instead of creating a new one.
+Highcharts.addEvent(Highcharts.Point, 'click', function () {
+    if (this.series.options.className.indexOf('popup-on-click') !== -1) {
+        const chart = this.series.chart;
+        const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
+        const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
 
-//Messge
-const message = document.getElementById("message");
-
-//The calculate button
-const button = document.querySelector(".input-group button");
-//Attach an event listener
-button.addEventListener("click", calculateGrowth);
-
-const data = [];
-const labels = [];
-
-function calculateGrowth(e) {
-    e.preventDefault();
-    data.length = 0;
-    labels.length = 0;
-    let growth = 0;
-    try {
-        const initial = parseInt(intialAmount.value);
-        const period = parseInt(years.value);
-        const interest = parseInt(rates.value);
-        const comp = parseInt(compound.value);
-
-        for(let i = 1; i <= period; i++) {
-            const final = initial * Math.pow(1 + ((interest / 100) / comp), comp * i);
-            data.push(toDecimal(final, 2));
-            labels.push("Year " + i);
-            growth = toDecimal(final, 2);
+        const anchorX = this.plotX + this.series.xAxis.pos;
+        const anchorY = this.plotY + this.series.yAxis.pos;
+        const align = anchorX < chart.chartWidth - 200 ? 'left' : 'right';
+        const x = align === 'left' ? anchorX + 10 : anchorX - 10;
+        const y = anchorY - 30;
+        if (!chart.sticky) {
+            chart.sticky = chart.renderer
+                .label(text, x, y, 'callout',  anchorX, anchorY)
+                .attr({
+                    align,
+                    fill: 'rgba(0, 0, 0, 0)',
+                    padding: 10,
+                    zIndex: 7 // Above series, below tooltip
+                })
+                .css({
+                    color: 'white'
+                })
+                .on('click', function () {
+                    chart.sticky = chart.sticky.destroy();
+                })
+                .add();
+        } else {
+            chart.sticky
+                .attr({ align, text })
+                .animate({ anchorX, anchorY, x, y }, { duration: 250 });
         }
-        //
-        message.innerText = `You will have this amount ${growth} after ${period} years`;
-        drawGraph();
-    } catch (error) {
-        console.error(error);
     }
-}
+});
 
-function drawGraph() {
-    line.destroy();
-    line = new Chart(context, {
-        type: 'line',
-        data: {
-            labels,
-            datasets: [{
-                label: "compound",
-                data,
-                fill: true,
-                backgroundColor: "rgba(12, 141, 0, 0.7)",
-                borderWidth: 3
-            }]
+
+Highcharts.chart('container', {
+
+    chart: {
+        scrollablePlotArea: {
+            minWidth: 500
+        },
+    
+    },
+    legend: {
+        enabled : false
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    data: {
+        csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
+        beforeParse: function (csv) {
+            return csv.replace(/\n\n/g, '\n');
         }
-    });
-}
+    },
 
-function toDecimal(value, decimals) {
-    return +value.toFixed(decimals);
-}
+    title: {
+        text: null
+    },
+
+
+    xAxis: {
+        tickInterval: 7 * 24 * 3600 * 1000, // one week
+        tickWidth: 0,
+        gridLineWidth: 0,
+        labels: {
+            align: 'left',
+            x: 3,
+            y: 10
+        }
+    },
+
+    yAxis: [{ // left y axis
+        title: {
+            text: null
+        },
+        labels: {
+            align: 'right',
+            x: -10,
+            y: 16,
+            format: '{value:.,0f}'
+        },
+        gridLineWidth: 0,
+        showFirstLabel: false
+    }],
+
+    tooltip: {
+        shared: true,
+        crosshairs: true
+    },
+
+    plotOptions: {
+        series: {
+            cursor: 'pointer',
+            className: 'popup-on-click',
+            marker: {
+                enabled: false,
+                lineWidth: 1
+            }
+        }
+    },
+
+    series: [{
+        name: 'All sessions',
+        lineWidth: 4,
+        marker: {
+            enabled: false,
+            radius: 4
+        }
+    }, {
+        name: 'New users'
+    }]
+});
