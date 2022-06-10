@@ -18,12 +18,21 @@ Highcharts.chart('container', {
     events: {
         load: function() {
           var chart = this,
+            tickPositions = chart.yAxis[0].tickPositions,
             yAxis = chart.yAxis[0],
             yExtremes = yAxis.getExtremes(),
             newMin = yExtremes.dataMin - 5,
             newMax = yExtremes.dataMax + 5;
 
+          if (newMax - tickPositions[tickPositions.length - 1] < 5) {
+            tickPositions.pop();
+          }
+          tickPositions.push(newMax);
+
           yAxis.setExtremes(newMin, newMax, true, false);
+          yAxis.update({
+            tickPositions: tickPositions
+          });
         }
       },
 
@@ -42,7 +51,17 @@ Highcharts.chart('container', {
         crosshair: {
             width: 1,
             color: 'gray'
-        }
+        },
+        labels: {
+            align: 'left',
+            x: 10,
+            y: 30,
+            format: '{value:.,0f}',
+            enabled: true,
+            style: {
+                fontSize: 15
+            }
+        },
     },
 
     yAxis: [{ // left y axis
@@ -85,17 +104,17 @@ Highcharts.chart('container', {
     },
 
     series: [{name: 'Investasi di Sinarmas',
-    data: [4, 4.4, 4.8, 5, 5.5, 5.9, 8, 10],
+    data: [7, 7.4, 7.8, 8, 8.5, 8.9, 9.5, 10],
     color: '#D30000',
     lineWidth: 2
 }, {
     name: 'Deposito',
-    data: [4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4],
+    data: [7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.8],
     color: 'grey',
     lineWidth: 2
     }, {
         name: 'Tabungan Biasa',
-        data: [4, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2],
+        data: [7, 7, 7, 7, 7.1, 7.1, 7.1, 7.1],
         color: 'orange',
         lineWidth: 2
         }]
