@@ -652,10 +652,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: stretch;
 }
 
-.justify-items-end {
-  justify-items: end;
-}
-
 .gap-0 {
   gap: 0px;
 }
@@ -724,16 +720,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(211 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-amber-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(103 232 249 / var(--tw-bg-opacity));
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -795,36 +781,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4px;
 }
 
-.pb-1 {
-  padding-bottom: 0.25rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
-}
-
 .pt-10 {
   padding-top: 2.5rem;
 }
 
-.pt-\[45px\] {
-  padding-top: 45px;
-}
-
-.pt-\[46px\] {
-  padding-top: 46px;
-}
-
-.pt-\[40px\] {
-  padding-top: 40px;
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .text-center {
   text-align: center;
-}
-
-.align-bottom {
-  vertical-align: bottom;
 }
 
 .text-lg {
@@ -854,9 +820,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.5rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -1134,9 +1110,19 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
