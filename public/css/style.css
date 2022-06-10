@@ -516,6 +516,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .m-9 {
   margin: 2.25rem;
 }
@@ -530,8 +534,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: auto;
 }
 
-.mb-\[-20px\] {
-  margin-bottom: -20px;
+.mt-\[60px\] {
+  margin-top: 60px;
+}
+
+.ml-12 {
+  margin-left: 3rem;
 }
 
 .mb-5 {
@@ -552,22 +560,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-7 {
   margin-top: 1.75rem;
-}
-
-.mt-\[-20px\] {
-  margin-top: -20px;
-}
-
-.mt-\[20px\] {
-  margin-top: 20px;
-}
-
-.mt-\[60px\] {
-  margin-top: 60px;
-}
-
-.ml-12 {
-  margin-left: 3rem;
 }
 
 .block {

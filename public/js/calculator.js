@@ -15,6 +15,18 @@ Highcharts.chart('container', {
         enabled : false
     },
 
+    events: {
+        load: function() {
+          var chart = this,
+            yAxis = chart.yAxis[0],
+            yExtremes = yAxis.getExtremes(),
+            newMin = yExtremes.dataMin - 5,
+            newMax = yExtremes.dataMax + 5;
+
+          yAxis.setExtremes(newMin, newMax, true, false);
+        }
+      },
+
     credits: {
         enabled: false
     },
@@ -39,12 +51,12 @@ Highcharts.chart('container', {
         },
         labels: {
             align: 'right',
-            x: 10,
+            x: 0,
             y: 0,
             format: '{value:.,0f}',
             enabled: false
         },
-        gridLineWidth: 0,
+        gridLineWidth: 1,
         showFirstLabel: false
     }],
 
