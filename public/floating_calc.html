@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
@@ -15,16 +12,14 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+      rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
+    <title>Calculator</title>
 </head>
-<body class="text-gray-600 body-font font-montserrat">
-   <section id="calculator" class="pt-12">
-        <div class="container items-center m-9 mx-auto my-auto">
-          <div class="flex flex-col px-4 lg:space-x-7 lg:w-[400px]">
+<body>
+    <section class="relative">
+        <div class="absolute px-6 py-8 lg:w-[400px] bg-white shadow-2xl mt-[60px] rounded-xl ml-12">
             <div class="w-full mb-5">
                 <h1 class="text-lg font-bold">Ayo Rencanakan <span class="text-[#D30000]">Investasi</span> Kamu!</h1>
             </div>
@@ -40,14 +35,10 @@
                 <button type="submit" class="text-white bg-[#d30000] hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simulasikan</button>
             </form>
           </div>
-          <div class="lg:my-0 sm:my-4 w-full lg:w-full lg:h-full">
-            <figure class="highcharts-figure">
-              <div id="container"></div>
-          </figure>
-          </div>
-        </div>
-      </div>
-   </section>
+        <figure class="highcharts-figure">
+            <div id="container" style="height:700px"></div>
+        </figure>
+    </section>
 </body>
 <script src="js/calculator.js"></script>
 </html>

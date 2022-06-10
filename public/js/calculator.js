@@ -7,6 +7,7 @@ Highcharts.chart('container', {
         scrollablePlotArea: {
             minWidth: 500
         },
+        heigh: 1000,
         backgroundColor: "rgba(0,0,0,0)"
     
     },
@@ -74,11 +75,16 @@ Highcharts.chart('container', {
     series: [{name: 'Investasi di Sinarmas',
     data: [4, 4.4, 4.8, 5, 5.5, 5.9, 8, 10],
     color: '#D30000',
-    lineWidth: 1
+    lineWidth: 2
 }, {
-    name: 'Tabungan Biasa',
-    data: [4, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2],
-    color: 'purple',
-    lineWidth: 1
-    }]
+    name: 'Deposito',
+    data: [4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4],
+    color: 'grey',
+    lineWidth: 2
+    }, {
+        name: 'Tabungan Biasa',
+        data: [4, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2],
+        color: 'orange',
+        lineWidth: 2
+        }]
 });
