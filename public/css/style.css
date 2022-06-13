@@ -781,10 +781,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4px;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -820,19 +816,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.5rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -1108,16 +1099,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-space-x-reverse: 0;
     margin-right: calc(1.75rem * var(--tw-space-x-reverse));
     margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .lg\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 
   .lg\:text-2xl {

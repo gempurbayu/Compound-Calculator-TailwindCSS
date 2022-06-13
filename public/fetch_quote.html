@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="quote"></p>
+
+
+</body>
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var price= JSON.parse(this.responseText);
+            document.getElementById("quote").innerHTML = price[0]["previousClosingPriceOneTradingDayAgo"];
+        }
+    };
+    xmlhttp.open("GET", "https://www.bloomberg.com/markets2/api/intraday/BACHOCOB:MM?days=1&interval=2&volumeInterval=15&currency=MXN", true);
+    xmlhttp.send();
+
+    $.ajax({
+    type: "GET",
+    url: "https://www.bloomberg.com/markets2/api/intraday/BACHOCOB:MM?days=1&interval=2&volumeInterval=15",
+    dataType: "json",
+    success: function(getPrice) {
+        $('#quote').append(getPrice[0].previousClosingPriceOneTradingDayAgo);
+    }
+});
+</script>
+</html>

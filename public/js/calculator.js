@@ -95,8 +95,8 @@ Highcharts.chart('container', {
             cursor: 'pointer',
             className: 'popup-on-click',
             marker: {
-                enabled: false,
-                lineWidth: 1
+                enabled: true,
+                lineWidth: 0
             },
             poinStart: 4,
             yAxis: 0
