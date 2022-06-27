@@ -36,10 +36,10 @@
                         <span class="text-[200px] text-slate-800 font-bold leading-none">20</span>
                     </div>
                 </div>
-                <div class="container w-auto">
+                <div class="container w-auto my-auto">
                     <div class="px-[85px]">
                         <button class="prev-arrow">
-                            <img src="assets/up.svg" alt="down" width="45px" class=""/>
+                            <img src="assets/up2.svg" alt="down" width="45px" class=""/>
                         </button>
                     </div>
                     <div class="slider w-[555px]">
@@ -128,7 +128,7 @@
                     </div>
                     <div class="px-[85px]">
                         <button class="next-arrow">
-                            <img src="assets/down.svg" alt="down" width="45px"/>
+                            <img src="assets/down2.svg" alt="down" width="45px"/>
                         </button>
                     </div>
                 </div>
@@ -151,9 +151,10 @@
     $('.slider2').slick({
         nextArrow:'.next-arrow2',
         prevArrow: false,
-        speed: 100,
+        speed: 300,
         variableWidth: true,
-        infinite: false
+        infinite: false,
+        draggable: false
     });
 </script>
 </html>
