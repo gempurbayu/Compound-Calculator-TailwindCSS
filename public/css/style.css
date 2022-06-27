@@ -602,16 +602,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-\[250px\] {
+  width: 250px;
+}
+
 .w-auto {
   width: auto;
 }
 
 .w-\[555px\] {
   width: 555px;
-}
-
-.w-\[250px\] {
-  width: 250px;
 }
 
 .max-w-full {
@@ -706,6 +706,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(211 0 0 / var(--tw-border-opacity));
 }
 
+.border-\[\#1CAADF\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(28 170 223 / var(--tw-border-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -718,6 +723,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#d30000\] {
   --tw-bg-opacity: 1;
   background-color: rgb(211 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-amber-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 230 138 / var(--tw-bg-opacity));
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-4 {
@@ -783,6 +797,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -885,6 +903,41 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+
+.text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+.text-\[\#1CAADF\] {
+  --tw-text-opacity: 1;
+  color: rgb(28 170 223 / var(--tw-text-opacity));
+}
+
+.text-\[\#A34BCB\] {
+  --tw-text-opacity: 1;
+  color: rgb(163 75 203 / var(--tw-text-opacity));
+}
+
+.text-pink-600 {
+  --tw-text-opacity: 1;
+  color: rgb(219 39 119 / var(--tw-text-opacity));
+}
+
+.text-pink-700 {
+  --tw-text-opacity: 1;
+  color: rgb(190 24 93 / var(--tw-text-opacity));
+}
+
+.text-pink-500 {
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
 .shadow-2xl {
