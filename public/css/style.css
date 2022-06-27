@@ -630,10 +630,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1200px;
 }
 
-.w-\[150px\] {
-  width: 150px;
-}
-
 .max-w-full {
   max-width: 100%;
 }
@@ -805,8 +801,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4px;
 }
 
-.pl-\[400px\] {
-  padding-left: 400px;
+.pl-\[150px\] {
+  padding-left: 150px;
 }
 
 .pl-12 {
@@ -823,14 +819,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-1 {
   padding-bottom: 0.25rem;
-}
-
-.pl-\[100px\] {
-  padding-left: 100px;
-}
-
-.pl-\[150px\] {
-  padding-left: 150px;
 }
 
 .text-center {
@@ -1176,10 +1164,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 100%;
   }
 
-  .lg\:w-\[800px\] {
-    width: 800px;
-  }
-
   .lg\:w-\[700px\] {
     width: 700px;
   }
@@ -1201,28 +1185,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1280px) {
-  .xl\:w-\[1100px\] {
-    width: 1100px;
-  }
-
-  .xl\:w-\[100px\] {
-    width: 100px;
-  }
-
-  .xl\:w-\[1000px\] {
-    width: 1000px;
-  }
-
-  .xl\:w-\[900px\] {
-    width: 900px;
-  }
-
   .xl\:w-\[950px\] {
     width: 950px;
   }
 
   .xl\:w-\[150px\] {
     width: 150px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:w-\[1300px\] {
+    width: 1300px;
+  }
+
+  .\32xl\:pl-\[200px\] {
+    padding-left: 200px;
   }
 }
 
