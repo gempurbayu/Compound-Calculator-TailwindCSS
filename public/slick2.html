@@ -10,11 +10,11 @@
     <title>Document</title>
 </head>
 <body class="overflow-hidden max-w-full mx-auto flex my-auto">
-    <div class="slider2">
-        <div class="item h-12 xl:w-[1100px] lg:w-[800px]">
+    <div class="slider2 pl-[150px]">
+        <div class="item h-12 xl:w-[950px] lg:w-[700px]">
             <div class="items my-auto flex  h-[305px]">
                 <div class="gambar my-auto">
-                    <img src="assets/rocket.png" alt="down" width="150px" height="150px" class=""/>
+                    <img src="assets/rocket.png" alt="down" class="lg:w-[150px] md:w-[150px] xl:w-[150px] sm:w-[150px]"/>
                 </div>
                 <div class="cont my-auto pl-12">
                     <div class="title pb-3">
@@ -151,7 +151,7 @@
     $('.slider2').slick({
         nextArrow:'.next-arrow2',
         prevArrow: false,
-        speed: 1000,
+        speed: 100,
         variableWidth: true,
         infinite: false
     });
