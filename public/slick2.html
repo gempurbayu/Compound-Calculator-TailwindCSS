@@ -10,11 +10,11 @@
     <title>Document</title>
 </head>
 <body class="overflow-hidden max-w-full mx-auto flex my-auto">
-    <div class="slider2 pl-[150px] 2xl:pl-[200px] ">
-        <div class="item h-12 xl:w-[950px] lg:w-[700px] 2xl:w-[1300px]">
+    <div class="slider2">
+        <div class="item h-12 xl:w-[950px] lg:w-[700px] 2xl:w-[1000px] xl:pl-[150px] 2xl:pl-[200px] lg:pl-[150px] md:pl-[150px]">
             <div class="items my-auto flex  h-[305px]">
                 <div class="gambar my-auto">
-                    <img src="assets/rocket.png" alt="down" class="lg:w-[150px] md:w-[150px] xl:w-[150px] sm:w-[150px]"/>
+                    <img src="assets/rocket.png" alt="down" class="w-[200px]"/>
                 </div>
                 <div class="cont my-auto pl-12">
                     <div class="title pb-3">
@@ -30,13 +30,18 @@
             </div>
         </div>
         <div class="item h-12  w-[1200px]">
-            <div class="items flex h-[305px] my-auto">
+            <div class="items flex h-[305px] my-auto pl-12">
+                <div class="my-auto space-x-5">
+                    <button class="prev-arrow2">
+                        <img src="assets/back.svg" alt="down" width="45px" class=""/>
+                    </button>
+                </div>
                 <div class="my-auto">
-                    <div class="number w-[250px]">
+                    <div class="number w-[250px] pl-10">
                         <span class="text-[200px] text-slate-800 font-bold leading-none">20</span>
                     </div>
                 </div>
-                <div class="container w-auto my-auto">
+                <div class="slicky-slider my-auto">
                     <div class="px-[85px]">
                         <button class="prev-arrow">
                             <img src="assets/up2.svg" alt="down" width="45px" class=""/>
@@ -46,7 +51,7 @@
                         <div class="s_item w-full">
                             <div class="item flex w-full">
                                 <div class="number w-[250px]">
-                                <span class="text-[200px] text-pink-600 font-bold leading-none">15</span>
+                                <span class="text-[200px] text-pink-600 font-bold leading-none tracking-tighter">15</span>
                                 </div>
                                 <div class="cont w-full items-stretch h-full ml-8">
                                     <div class="py-2 tablet:w-full w-full">
@@ -123,14 +128,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div> 
                     </div>
                     <div class="px-[85px]">
                         <button class="next-arrow">
                             <img src="assets/down2.svg" alt="down" width="45px"/>
                         </button>
                     </div>
+                </div>
+                <div class="piala my-auto ml-32 hover:animate-bounce">
+                    <img src="assets/thropy.svg" alt="down" width="180px" class=""/>
                 </div>
             </div>
         </div>
@@ -150,11 +157,19 @@
 
     $('.slider2').slick({
         nextArrow:'.next-arrow2',
-        prevArrow: false,
+        prevArrow: '.prev-arrow2',
         speed: 300,
         variableWidth: true,
         infinite: false,
         draggable: false
     });
 </script>
+
+<style>
+    .slick-disabled {
+  display: none; 
+  pointer-events:none;
+  opacity: 0;
+}
+</style>
 </html>
