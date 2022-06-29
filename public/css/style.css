@@ -661,6 +661,10 @@ video {
   margin-right: 1rem;
 }
 
+.ml-24 {
+  margin-left: 6rem;
+}
+
 .block {
   display: block;
 }
@@ -713,8 +717,8 @@ video {
   width: 66.666667%;
 }
 
-.w-\[1500px\] {
-  width: 1500px;
+.w-\[1600px\] {
+  width: 1600px;
 }
 
 .w-\[500px\] {
@@ -761,6 +765,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-items-end {
+  justify-items: end;
 }
 
 .gap-0 {
