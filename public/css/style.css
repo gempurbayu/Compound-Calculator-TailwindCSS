@@ -721,6 +721,18 @@ video {
   width: 83.333333%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
+.w-5\/12 {
+  width: 41.666667%;
+}
+
+.w-7\/12 {
+  width: 58.333333%;
+}
+
 .max-w-full {
   max-width: 100%;
 }
