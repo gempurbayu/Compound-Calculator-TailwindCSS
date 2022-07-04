@@ -759,8 +759,8 @@ video {
   align-items: stretch;
 }
 
-.justify-end {
-  justify-content: flex-end;
+.justify-start {
+  justify-content: flex-start;
 }
 
 .gap-0 {
@@ -1281,6 +1281,10 @@ video {
 
   .\32xl\:w-\[1000px\] {
     width: 1000px;
+  }
+
+  .\32xl\:justify-end {
+    justify-content: flex-end;
   }
 
   .\32xl\:pl-\[200px\] {
