@@ -661,6 +661,18 @@ video {
   margin-right: 1rem;
 }
 
+.-ml-12 {
+  margin-left: -3rem;
+}
+
+.-ml-14 {
+  margin-left: -3.5rem;
+}
+
+.-ml-16 {
+  margin-left: -4rem;
+}
+
 .block {
   display: block;
 }
@@ -831,6 +843,16 @@ video {
   background-color: rgb(211 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-amber-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+
+.bg-violet-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -956,6 +978,10 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-\[150px\] {
+  font-size: 150px;
 }
 
 .font-bold {
@@ -1272,6 +1298,10 @@ video {
   .xl\:pl-\[150px\] {
     padding-left: 150px;
   }
+
+  .xl\:text-\[150px\] {
+    font-size: 150px;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -1279,8 +1309,16 @@ video {
     margin-left: 14rem;
   }
 
+  .\32xl\:ml-1 {
+    margin-left: 0.25rem;
+  }
+
   .\32xl\:w-\[1000px\] {
     width: 1000px;
+  }
+
+  .\32xl\:w-\[555px\] {
+    width: 555px;
   }
 
   .\32xl\:justify-end {
@@ -1289,6 +1327,10 @@ video {
 
   .\32xl\:pl-\[200px\] {
     padding-left: 200px;
+  }
+
+  .\32xl\:text-\[200px\] {
+    font-size: 200px;
   }
 }
 
