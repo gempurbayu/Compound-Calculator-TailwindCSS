@@ -49,7 +49,7 @@ Highcharts.chart('container', {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         ,
         crosshair: {
-            width: 1,
+            width: 2,
             color: 'gray'
         },
         labels: {
@@ -75,7 +75,7 @@ Highcharts.chart('container', {
             format: '{value:.,0f}',
             enabled: false
         },
-        gridLineWidth: 1,
+        gridLineWidth: 0,
         showFirstLabel: false
     }],
 
@@ -106,16 +106,16 @@ Highcharts.chart('container', {
     series: [{name: 'Investasi di Sinarmas',
     data: [7, 7.4, 7.8, 8, 8.5, 8.9, 9.5, 10],
     color: '#D30000',
-    lineWidth: 2
+    lineWidth: 3
 }, {
     name: 'Deposito',
     data: [7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.8],
     color: 'grey',
-    lineWidth: 2
+    lineWidth: 3
     }, {
         name: 'Tabungan Biasa',
         data: [7, 7, 7, 7, 7.1, 7.1, 7.1, 7.1],
         color: 'orange',
-        lineWidth: 2
+        lineWidth: 3
         }]
 });
