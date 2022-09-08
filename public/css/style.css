@@ -615,11 +615,6 @@ video {
   margin-bottom: auto;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mt-\[60px\] {
   margin-top: 60px;
 }
@@ -666,14 +661,6 @@ video {
 
 .mr-4 {
   margin-right: 1rem;
-}
-
-.ml-14 {
-  margin-left: 3.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .block {
@@ -732,12 +719,8 @@ video {
   width: 83.333333%;
 }
 
-.w-5\/12 {
-  width: 41.666667%;
-}
-
-.w-7\/12 {
-  width: 58.333333%;
+.w-\[120px\] {
+  width: 120px;
 }
 
 .w-4\/12 {
@@ -746,18 +729,6 @@ video {
 
 .w-\[600px\] {
   width: 600px;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
-.w-\[150px\] {
-  width: 150px;
-}
-
-.w-\[120px\] {
-  width: 120px;
 }
 
 .max-w-full {
@@ -1002,6 +973,10 @@ video {
   font-size: 200px;
 }
 
+.text-\[100px\] {
+  font-size: 100px;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1020,10 +995,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[100px\] {
-  font-size: 100px;
 }
 
 .font-bold {
@@ -1304,24 +1275,12 @@ video {
     width: 500px;
   }
 
-  .md\:w-5\/12 {
-    width: 41.666667%;
-  }
-
-  .md\:w-\[200px\] {
-    width: 200px;
-  }
-
-  .md\:w-\[250px\] {
-    width: 250px;
+  .md\:w-\[120px\] {
+    width: 120px;
   }
 
   .md\:w-10\/12 {
     width: 83.333333%;
-  }
-
-  .md\:w-\[120px\] {
-    width: 120px;
   }
 
   .md\:flex-row {
@@ -1332,13 +1291,13 @@ video {
     padding-left: 150px;
   }
 
+  .md\:text-\[150px\] {
+    font-size: 150px;
+  }
+
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-\[150px\] {
-    font-size: 150px;
   }
 }
 
@@ -1352,12 +1311,12 @@ video {
     margin-bottom: 0px;
   }
 
-  .lg\:mr-0 {
-    margin-right: 0px;
-  }
-
   .lg\:ml-1 {
     margin-left: 0.25rem;
+  }
+
+  .lg\:mr-0 {
+    margin-right: 0px;
   }
 
   .lg\:h-full {
@@ -1376,20 +1335,16 @@ video {
     width: 700px;
   }
 
+  .lg\:w-5\/12 {
+    width: 41.666667%;
+  }
+
   .lg\:w-\[300px\] {
     width: 300px;
   }
 
   .lg\:w-10\/12 {
     width: 83.333333%;
-  }
-
-  .lg\:w-\[250px\] {
-    width: 250px;
-  }
-
-  .lg\:w-5\/12 {
-    width: 41.666667%;
   }
 
   .lg\:flex-row {
