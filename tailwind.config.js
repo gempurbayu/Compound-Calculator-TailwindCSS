@@ -13,6 +13,10 @@ module.exports = {
    ],
   theme: {
     extend: {
+      colors: {
+        ungu: '#a325cc',
+        biru: '#0190f5', // works ⭕️
+    },
     }
     
   },
